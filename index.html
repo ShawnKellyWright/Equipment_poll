@@ -1,0 +1,129 @@
+<!--  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Parking Department Equipment Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- following is jquery script to prevent enter kdy submitting the form along with required attribute  -->
+    <script type="text/javascript">
+        $(function () {
+            var keyStop = {
+                8: ":not(input:text, textarea, input:file, input:password)", // stop backspace = back
+                13: "input:text, input:password", // stop enter = submit 
+
+                end: null
+            };
+            $(document).bind("keydown", function (event) {
+                var selector = keyStop[event.which];
+
+                if (selector !== undefined && $(event.target).is(selector)) {
+                    event.preventDefault(); //stop event
+                }
+                return true;
+            });
+        });
+    </script>
+</head>
+
+<body style="display: flexbox;">
+
+
+
+    <div class="container">
+        <div class="logo" style="margin: 50px">
+            <img width="100%" src="images/h-e-b-center-at-cedar-parkpng_2.svg" alt="HEB Center Logo">
+        </div>
+
+        <h1 class="text-center" style="margin: 25px">Parking Department Equipment Form</h1>
+        <hr width="100%" style="border: 3px solid #d22011;" />
+        <br><br>
+        <form
+            action="https://script.google.com/macros/s/AKfycbxIc3kDLTYGuRf94cFIv7WQz199hZwi0fpnryNAsrmmxoT7g3ZKueqaY7ztYh5mr6Y4/exec"
+            method="get">
+
+            <div class="form-group">
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname" placeholder="John" required><br><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname" placeholder="Doe" required><br><br>
+            </div>
+
+            <div class="form-group">
+                <label>Do you have an ice chest? (Prefer 60-100 quart)</label>
+                <br>
+                <input type="radio" name="ice-chest" value="yes" required>Yes
+                <input type="radio" name="ice-chest" value="no">No
+                <br><br>
+                <div class="form-group">
+                    <label for="ice-chest-size">What size is your ice chest? (Please enter the size in quarts)</label>
+                    <input type="text" class="form-control" id="ice-chest-size" name="ice-chest-size"
+                        placeholder="60 qt" style="min-width: 300px; max-width: 600px;">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Do you have a shade canopy tent?</label>
+                    <br>
+                    <input type="radio" name="canopy-tent" value="yes" required>Yes
+                    <input type="radio" name="canopy-tent" value="no">No
+                    <br><br>
+                    <label>What size is your shade canopy tent? (Please enter the size in feet)</label>
+                    <br>
+                    <input type="text" name="canopy-tent-size" placeholder="10 Ft x 10 Ft">
+                    <br><br>
+                </div>
+
+                <div class="form-group">
+                    <label>Do you have Walkie Talkies - Two-Way radios?</label>
+                    <br>
+                    <input type="radio" name="walkie-talkies" value="yes" required>Yes
+                    <input type="radio" name="walkie-talkies" value="no">No
+                    <br><br>
+                    <label>If yes, how many do you have?</label>
+                    <input type="text" name="walkie-talkies-count">
+                    <br><br>
+                </div>
+
+                <div class="form-group">
+                    <label>Do you have mechanic skills?</label>
+                    <br>
+                    <input type="radio" name="mechanic-skills" value="yes" required>Yes
+                    <input type="radio" name="mechanic-skills" value="no">No
+                    <br><br>
+                </div>
+                <div class="form-group">
+                    <label>Do you have locksmith skills?</label>
+                    <br>
+                    <input type="radio" name="locksmith-skills" value="yes" required>Yes
+                    <input type="radio" name="locksmith-skills" value="no">No
+                    <br><br>
+                </div>
+
+                <div>
+                    <label for="other-equip">Do you have any other equipment that you feel would be valueable to the
+                        Parking department?
+                        <br><br>
+                        <textarea id="bio" name="other-equip" rows="3" cols="30"
+                            placeholder="I have free gatorade from my company..."></textarea>
+                    </label>
+
+                </div>
+
+                <div class="text-center">
+                    <input type="submit" value="Submit" class="btn btn-primary mb-2">
+                </div>
+        </form>
+        <br>
+        <footer>
+            <p style="color: ">P.S.:
+                If you have any questions in regards to this form, please speak with your Parking Key man or send
+                message in Microsoft Teams Chat</p>
+        </footer>
+
+</body>
